@@ -5,6 +5,7 @@ import "../App"
 
 
 class TimerWrapper extends React.Component{
+
   constructor(props) {
     super (props)
     this.startTimer = this.startTimer.bind(this)
@@ -34,14 +35,14 @@ class TimerWrapper extends React.Component{
       return (
         <div>
           <div className = "butt" >
-            <Button time="5" startTimer={this.startTimer}/>
+            <Button time="10" startTimer={this.startTimer}/>
             <Button time="30" startTimer={this.startTimer}/>
             <Button time="60" startTimer={this.startTimer}/>
           </div>
           <TimerDisplay timeLeft={this.state.timeLeft}/>
           <audio id="end" preload="auto" src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3" ></audio>
           <div className="timer-line"
-              style={{ width: `${this.state.timeLeft}%`}}>   
+              style={{ width: `${this.state.timeLeft / 0.7 +  "%"}`}}>   
           </div>
         </div>
         )
@@ -50,7 +51,7 @@ class TimerWrapper extends React.Component{
 
     }
     
-
+    
     class Button extends React.Component{
       handleStartTime () {
           return this.props.startTimer(this.props.time)
@@ -59,7 +60,7 @@ class TimerWrapper extends React.Component{
       return <button onClick={this.handleStartTime.bind(this)}>
         {this.props.time}  seconds</button>
       }   
-    }
+      }
 
 
      
