@@ -5,7 +5,6 @@ import "../App"
 
 
 class TimerWrapper extends React.Component{
-
   constructor(props) {
     super (props)
     this.startTimer = this.startTimer.bind(this)
@@ -51,6 +50,7 @@ class TimerWrapper extends React.Component{
 
     }
     
+
     class Button extends React.Component{
       handleStartTime () {
           return this.props.startTimer(this.props.time)
@@ -59,7 +59,7 @@ class TimerWrapper extends React.Component{
       return <button onClick={this.handleStartTime.bind(this)}>
         {this.props.time}  seconds</button>
       }   
-      }
+    }
 
 
      
