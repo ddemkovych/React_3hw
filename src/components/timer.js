@@ -34,15 +34,15 @@ class TimerWrapper extends React.Component{
     render () {
       return (
         <div>
-          <div>
+          <div className = "butt" >
             <Button time="5" startTimer={this.startTimer}/>
             <Button time="30" startTimer={this.startTimer}/>
-            <Button time="100" startTimer={this.startTimer}/>
+            <Button time="60" startTimer={this.startTimer}/>
           </div>
           <TimerDisplay timeLeft={this.state.timeLeft}/>
           <audio id="end" preload="auto" src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3" ></audio>
           <div className="timer-line"
-               style={{ width: `${this.state.timeLeft}%`}}>   
+              style={{ width: `${this.state.timeLeft}%`}}>   
           </div>
         </div>
         )

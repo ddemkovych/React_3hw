@@ -1,14 +1,22 @@
 *{
     background: rgb(2, 2, 2);
 }
+ 
+.butt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 
 Button{
-    margin-top: 20px;
-    margin-left: 23em;
+    margin-top: 60px;
     color: rgb(211, 39, 48);
     background: rgb(2, 2, 2);
     height: 60px;
-    width: 80px;
+    width: 100px;
+    margin-left: 20px;
+    
 }
 
 h1{
@@ -18,8 +26,13 @@ h1{
 }
 
 .timer-line{
-    margin-top: 20px;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-left:200px;
+    margin-right: 200px;
     height: 30px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(255, 187, 0);
 }
