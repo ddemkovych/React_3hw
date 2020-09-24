@@ -19,8 +19,10 @@ Button{
 
 h1{
     padding-top: 50px;
-    margin-left: 21.2em;
     color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timer-line{
