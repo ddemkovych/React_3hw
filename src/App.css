@@ -10,11 +10,13 @@ Button{
     height: 60px;
     width: 80px;
 }
+
 h1{
     padding-top: 50px;
     margin-left: 21.2em;
     color: red;
 }
+
 .timer-line{
     margin-top: 20px;
     height: 30px;

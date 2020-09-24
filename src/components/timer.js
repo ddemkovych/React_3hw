@@ -53,30 +53,30 @@ class TimerWrapper extends React.Component{
     
     class Button extends React.Component{
       handleStartTime () {
-         return this.props.startTimer(this.props.time)
+          return this.props.startTimer(this.props.time)
       }
       render () {
       return <button onClick={this.handleStartTime.bind(this)}>
         {this.props.time}  seconds</button>
       }   
-     }
+      }
 
 
      
-class TimerDisplay extends React.Component{
-  render() {
-    if (this.props.timeLeft === 0) {
-      document.getElementById("end").play()
-    }
-    if (this.props.timeLeft === 0 || this.props.timeLeft === null ) {
-      return <div></div>
+    class TimerDisplay extends React.Component{
+      render() {
+        if (this.props.timeLeft === 0) {
+          document.getElementById("end").play()
+        }
+        if (this.props.timeLeft === 0 || this.props.timeLeft === null ) {
+          return <div></div>
 
+        }
+      return <h1>Time : {this.props.timeLeft} sec </h1>
+      }
+        
     }
-  return <h1>Time : {this.props.timeLeft} sec </h1>
-  }
-    
-}
-    
+        
    
     export default TimerWrapper; 
     
