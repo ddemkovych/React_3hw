@@ -8,7 +8,7 @@
     justify-content: center;  
 }
 
-Button{
+button{
     margin-top: 60px;
     color: rgb(211, 39, 48);
     background: rgb(2, 2, 2);
@@ -17,8 +17,9 @@ Button{
     margin-left: 20px;
 }
 
-h1{
+.timer{
     padding-top: 50px;
+    font-size: 40px;
     color: red;
     display: flex;
     align-items: center;
@@ -28,9 +29,8 @@ h1{
 .timer-line{
     font-weight: 400%;
     margin-top: 40px;
-    margin-left:100px;
     margin-right: 200px;
-    height: 30px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

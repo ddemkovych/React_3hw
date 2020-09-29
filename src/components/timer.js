@@ -1,84 +1,52 @@
-import React, {Component} from "react";
+import React,{ useState, useEffect } from "react";
 
 import "../App"
 
 
+const TimerWrapper = () => {
+    const [time, setTime] = useState(10);
+    const [isActive, setIsActive] = useState(false);
 
-class TimerWrapper extends React.Component{
-
-  constructor(props) {
-    super (props)
-    this.startTimer = this.startTimer.bind(this)
-    this.state = {
-      timeLeft: null,
-      timer: null,
-     
+    const  startTime =() =>{
+        setIsActive(!isActive);
     }
-  }
 
-  startTimer(timeLeft) {
-    clearInterval(this.state.timer)
-    
-    let timer = setInterval(()=>{
-      var timeLeft = this.state.timeLeft -1
-      if(timeLeft === 0) {
-       clearInterval(timer) 
-      }
-      this.setState({
-        timeLeft: timeLeft
-      }) 
-    }, 1000)
-    return this.setState({ timeLeft: timeLeft, timer: timer})
-  }
+    const  reset = () => {
+        if(setTime(10),
+           setIsActive(false)); 
+     {document.getElementById("end").play()}             
+}
+    useEffect(() => {
+        let interval; 
+        if (isActive) {
+            interval = setInterval(() => {
+                if (time > 0 ) {
+                    setTime(time -1 ) 
+                  
+                } else {
+                    reset()
+                }
+            }, 1000);
+        } else  {
+            clearInterval(interval);
+        }    
+       
+        return () => clearInterval(interval);
+        }, [isActive, time]);      
 
-    render () {
-      return (
+    return (
         <div>
-          <div className = "butt" >
-            <Button time="10" startTimer={this.startTimer}/>
-            <Button time="30" startTimer={this.startTimer}/>
-            <Button time="60" startTimer={this.startTimer}/>
-          </div>
-          <TimerDisplay timeLeft={this.state.timeLeft}/>
+            <div className="timer">{time}</div>
+            <div className="butt">
+                <button onClick={startTime}>{isActive ? 'Pause' : 'Start'}</button>
+                <button onClick={reset}>Reset</button>
+            </div>
           <audio id="end" preload="auto" src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3" ></audio>
-          <div className="timer-line"
-              style={{ width: `${this.state.timeLeft / 0.7 +  "%"}`}}>   
-          </div>
+            <div className="timer-line" style={{width: `calc(${time} * (100% / ${useState(10)}))`}}></div>
         </div>
-        )
         
-      }
-
-    }
-    
-    
-    class Button extends React.Component{
-      handleStartTime () {
-          return this.props.startTimer(this.props.time)
-      }
-      render () {
-      return <button onClick={this.handleStartTime.bind(this)}>
-        {this.props.time}  seconds</button>
-      }   
-      }
+    );
+}; 
 
 
-     
-    class TimerDisplay extends React.Component{
-      render() {
-        if (this.props.timeLeft === 0) {
-          document.getElementById("end").play()
-        }
-        if (this.props.timeLeft === 0 || this.props.timeLeft === null ) {
-          return <div></div>
-
-        }
-      return <h1>Time : {this.props.timeLeft} sec </h1>
-      }
-        
-    }
-        
-   
-    export default TimerWrapper; 
-    
-  
+export default TimerWrapper; 
