@@ -41,12 +41,11 @@ button{
 }
 
 .timer-line{
-    font-weight: 400%;
     margin-top: 40px;
-    margin-right: 200px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-right: 20px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgb(255, 187, 0);
 }
