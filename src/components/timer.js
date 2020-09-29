@@ -36,7 +36,9 @@ const TimerWrapper = () => {
 
     return (
         <div>
-            <div className="timer">{time}</div>
+            <div className="timer">
+                <span className="blok">{time}</span>
+            </div>
             <div className="butt">
                 <button onClick={startTime}>{isActive ? 'Pause' : 'Start'}</button>
                 <button onClick={reset}>Reset</button>
